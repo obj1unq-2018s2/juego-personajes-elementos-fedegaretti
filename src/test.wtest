@@ -1,0 +1,35 @@
+import jugadoresPersonajes.*
+import armas.*
+import elementos.*
+test "Primer Test" {
+	luisa.personajeActivo(mario)
+	luisa.aparece(aurora)
+	luisa.aparece(castillo)
+	assert.equals(mario.esFeliz(), true)
+	assert.equals(castillo.altura(), 20)
+	assert.equals(castillo.defensa(), 170)
+}
+
+test "Segundo Test" {
+	floki.arma(jabalina)
+	luisa.personajeActivo(mario)
+	luisa.aparece(tipa)
+	luisa.personajeActivo(floki)
+	luisa.aparece(aurora)
+	luisa.aparece(castillo)
+	assert.equals(mario.valorRecolectado(), 16)
+	assert.equals(tipa.altura(), 9)
+	assert.equals(aurora.estaViva(), false)
+	assert.equals(jabalina.estaCargada(), false)
+}
+
+test "Tercer Test" {
+	floki.arma(ballesta)
+	luisa.personajeActivo(floki)
+	luisa.aparece(aurora)
+	luisa.aparece(castillo)
+	assert.equals(mario.valorRecolectado(), 0)
+	assert.equals(castillo.defensa(), 146)
+	assert.equals(ballesta.estaCargada(), true)
+	assert.equals(ballesta.flechas(), 8)
+}
