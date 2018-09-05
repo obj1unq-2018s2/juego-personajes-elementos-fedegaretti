@@ -6,12 +6,13 @@ object castillo {
 		
 	}
 	method recibirTrabajo(){
-		if(defensa<=180){
-			defensa += 20			
-		}
-		else{ 
-			defensa = 200
-		}
+//		if(defensa<=180){
+//			defensa += 20			
+//		}
+//		else{ 
+//			defensa = 200
+//		}
+		defensa = (defensa+20).min(200)
 	}
 	method valorQueOtorga() = defensa/5 
 }
